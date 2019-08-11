@@ -1,0 +1,17 @@
+{{ $Xzya := "<a href=\"https://github.com/Xzya\">Xzya</a>" }}
+{{ $HugoThemeBootstrap4Blog := "<a href=\"https://github.com/alanorth/hugo-theme-bootstrap4-blog\">hugo-theme-bootstrap4-blog</a>" }}
+{{ $links := (dict "Xzya" $Xzya "HugoThemeBootstrap4Blog" $HugoThemeBootstrap4Blog ) }}
+{{ $thanks := i18n "thanks" $links | safeHTML }}
+
+{{ $license := .Site.Params.thelicense }}
+{{ $copyright := .Site.Copyright }}
+{{ $colorScheme := default "light" .Site.Params.footer.colorScheme }}
+
+<footer class="blog-footer w-100">
+    <nav class="navbar navbar-{{ $colorScheme }} bg-{{ $colorScheme }}">
+        <p class="w-100 text-center">{{ $copyright }}</p>
+        <p class="w-100 text-center">{{ $license }}: <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC Attribution-Share Alike 4.0 International</a>.</p>
+        <p class="w-100 text-center"><a href="#">{{ i18n "backToTop" }}</a></p>
+	<div class="cookie-consent">This website does not use cookies. If you agree to this, please continue browsing.</div>
+    </nav>
+</footer>
